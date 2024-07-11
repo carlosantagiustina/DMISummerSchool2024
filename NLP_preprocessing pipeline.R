@@ -11,6 +11,7 @@ options(encoding='UTF-8')
 #Rstudio should ask you to install it 
 install.packages(c("devtools","tidyverse","quanteda","newsmap","ggplot2","stm","spacyr","visNetwork"))
 devtools::install_github("hadley/emo")
+devtools::install_github("richfitz/remoji")
 require(quanteda)
 require(newsmap)
 require(ggplot2)

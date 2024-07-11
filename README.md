@@ -4,6 +4,27 @@ Repository with code for NLP preprocessing
 ##  Overview
 This NLP pipeline is designed to process and analyze textual data, focusing on tasks such as language detection, text cleaning, Named Entity Recognition (NER), and dependency relation extraction. The pipeline is built using R and various R packages.
 
+## Description
+This code implements a Natural Language Processing (NLP) pipeline for processing textual data. It includes steps for data loading, cleaning, and analysis using various R libraries. The code is designed to handle text data, such as tweets, and perform tasks such as language detection, emoji removal, URL extraction, hashtag extraction, and dependency parsing. The processed data is then used to build unigram and association matrices for further analysis.
+
+### Key Features
+#### Data Loading: 
+Reads data from a CSV file using the readr library.
+#### Language Detection: 
+Uses the textcat package to infer the language of the text.
+#### Data Cleaning: 
+Removes emojis, URLs, hashtags, and special characters.
+Extracts relevant features like hashtags, finance tags, and standard character emoticons.
+#### NLP Processing:
+Utilizes the spacyr package for Named Entity Recognition (NER) and dependency parsing.
+Custom function mySpacyrConsolidateEnt consolidates entity recognition results.
+#### Data Preparation for Analysis:
+Generates unigram and association Document-Feature Matrices (DFMs) using the quanteda package.
+Groups and filters DFMs, removing stopwords and other irrelevant features.
+#### Visualization:
+Creates word clouds for unigrams and associations.
+Builds dependency relation networks for visualization with visNetwork.
+
 ##  Initial Creation Date
 03/11/2021
 ## Current Version

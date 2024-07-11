@@ -154,21 +154,8 @@ data=readRDS("processed_data_tweets.RData")
 
 #### NLP pipeline for NER and for extracting dep-rel ####
 library(spacyr)# pacchetto utilizzato
-reticulate::install_miniconda(path = "~/Documents/Miniconda", update = TRUE, force = FALSE)# run it only once, the first time you use the code
-Sys.setenv(RETICULATE_MINICONDA_PATH="~/Documents/Miniconda")
-reticulate::condaenv_exists()
-reticulate::conda_create(
-  envname = "spacyr",
-  packages = "spacy",
-  forge = TRUE,
-  channel = "conda-forge")# run it only once
-reticulate::condaenv_exists()
-reticulate::use_miniconda(condaenv = "~/Documents/Miniconda/envs/spacyr/")
-spacyr::spacy_download_langmodel(
-   envname = "spacyr",model =  "fr_core_news_md"# download french model
- )# run it only once
-spacy_initialize('fr_core_news_md',condaenv = "~/Documents/Miniconda/envs/spacyr/")
-#spacy_install()
+spacyr::spacy_install()# run it only once
+spacyr::spacy_download_langmodel(lang_models =  "fr_core_news_md")# download french model  run it only once
 mySpacyrConsolidateEnt=function (x, concatenator = "_") 
 { 
   library(tidyverse)
